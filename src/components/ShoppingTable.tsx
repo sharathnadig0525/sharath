@@ -1,12 +1,12 @@
 import React, { ReactNode, useEffect, useRef } from "react";
-import { Flex, Table, Tag } from "antd";
+import {  Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { theme } from "antd";
 import { SortOrder } from "antd/es/table/interface";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 import { useShopping } from "../context/ShoppingContext";
 import { ShoppingItem } from "../types";
-import { SwapOutlined, ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import {  ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
 
 type SortKey = "name" | "quantity" | "price" | "date" | "total" | "categoryId" | "subCategoryId";
 
@@ -27,12 +27,12 @@ export default function ShoppingTable({
   const { visible, handleScroll } = useInfiniteScroll(data, 10);
   const { useToken } = theme;
   const { token } = useToken();
-  const isDark = token.colorBgBase == "#000" ? true : false;
+  const isDark = token.colorBgBase === "#000" ? true : false;
 
   const zetaSortIcon = ({ sortOrder }: { sortOrder: SortOrder }): ReactNode => {
     if (sortOrder === "ascend") return <ArrowUpOutlined className="zeta-sort-icon active" />;
     if (sortOrder === "descend") return <ArrowDownOutlined className="zeta-sort-icon active" />;
-    return !isDark ? <img src="static/icons/sort.svg" /> : <img src="static/icons/sort-dark.svg" />;
+    return !isDark ? <img src="static/icons/sort.svg" alt="Sort" /> : <img src="static/icons/sort-dark.svg" alt="Sort" />;
   };
 
 

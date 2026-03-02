@@ -14,7 +14,7 @@ export default function ReportModal(props: Props) {
   const { open, onClose, items } = props;
    const { useToken } = theme;
   const { token } = useToken();
-  const isDark = token.colorBgBase == "#000" ? true : false;
+  const isDark = token.colorBgBase === "#000" ? true : false;
 
   const totalSpending = useMemo(() => {
     return items.reduce(

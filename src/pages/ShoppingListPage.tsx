@@ -1,17 +1,13 @@
 import React, { useMemo, useState } from "react";
 import {
   Button,
-  Card,
   Form,
   Input,
   InputNumber,
   Select,
   DatePicker,
-  Row,
-  Col,
   Space,
   message,
-  Flex,
   Typography,
 } from "antd";
 import { theme } from "antd";
@@ -19,7 +15,7 @@ import SectionHeader from "../components/SectionHeader";
 import ShoppingTable from "../components/ShoppingTable";
 import { useShopping } from "../context/ShoppingContext";
 import { PlusOutlined } from "@ant-design/icons";
-import { SearchOutlined, DownloadOutlined } from "@ant-design/icons";
+import { SearchOutlined } from "@ant-design/icons";
 import ReportModal from "../components/ReportModal";
 import dayjs from "dayjs";
 import "./../css/ShoppingListPage.css";
@@ -37,7 +33,7 @@ export default function ShoppingListPage() {
     { label: "£", value: "GBP", disabled: true },
   ];
 
-  const isDark = token.colorBgBase == "#000" ? true : false;
+  const isDark = token.colorBgBase === "#000" ? true : false;
 
   const [filters, setFilters] = useState({
     categoryId: "all",
@@ -150,19 +146,19 @@ export default function ShoppingListPage() {
   }
 
 
-  function exportJSON() {
-    const blob = new Blob(
-      [JSON.stringify(sorted, null, 2)],
-      { type: "application/json" }
-    );
+  // function exportJSON() {
+  //   const blob = new Blob(
+  //     [JSON.stringify(sorted, null, 2)],
+  //     { type: "application/json" }
+  //   );
 
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "shopping_list.json";
-    a.click();
-    URL.revokeObjectURL(url);
-  }
+  //   const url = URL.createObjectURL(blob);
+  //   const a = document.createElement("a");
+  //   a.href = url;
+  //   a.download = "shopping_list.json";
+  //   a.click();
+  //   URL.revokeObjectURL(url);
+  // }
 
   function exportCSV() {
     const headers = [

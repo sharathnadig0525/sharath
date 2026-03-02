@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, ConfigProvider, Switch, Typography, theme } from "antd";
+import { Layout, ConfigProvider, Switch, theme } from "antd";
 import { ShoppingProvider } from "./context/ShoppingContext";
 import ShoppingListPage from "./pages/ShoppingListPage";
 import "./App.css";

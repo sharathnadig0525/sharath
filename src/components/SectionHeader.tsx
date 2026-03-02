@@ -1,8 +1,7 @@
 import React from "react";
-import { Button, theme } from "antd";
-import { ShoppingCartOutlined, BarChartOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { BarChartOutlined } from "@ant-design/icons";
 import "./../css/SectionHeader.css";
-import { useContext } from "react";
 
 interface SectionHeaderProps {
   title: string;
