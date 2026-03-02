@@ -18,7 +18,7 @@ export default function SectionHeader({
   return (
     <div className="section-header">
       <div className="section-header-left">
-        <img src="/static/icons/cart.svg" alt="Cart" />
+        <img src="/static/icons/carts.svg" alt="Cart" />
         <span className="section-title">{title}</span>
       </div>
 
