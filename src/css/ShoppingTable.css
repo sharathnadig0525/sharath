@@ -1,0 +1,20 @@
+.ant-table th {
+  user-select: none;
+}
+
+.ant-table,
+.ant-table-container,
+.ant-table-content {
+  border-radius: 0 !important;
+}
+
+.ant-table-container table > thead > tr:first-child th:first-child {
+  border-top-left-radius: 0 !important;
+}
+.ant-table-container table > thead > tr:first-child th:last-child {
+  border-top-right-radius: 0 !important;
+}
+
+.app-dark :where(.ant-table-wrapper) .ant-table {
+  background: #0D0D0D !important;
+}

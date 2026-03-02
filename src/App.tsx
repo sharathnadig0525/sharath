@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Layout, ConfigProvider, Switch, Typography, theme } from "antd";
+import { ShoppingProvider } from "./context/ShoppingContext";
+import ShoppingListPage from "./pages/ShoppingListPage";
+import "./App.css";
 
-function App() {
+const { Header, Content } = Layout;
+
+export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider
+      theme={{
+        algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        components: {
+          Switch: {
+            colorPrimaryHover: "#595959",
+            colorTextQuaternary: "#595959"
+          }
+        }
+      }}
+    >
+      <ShoppingProvider>
+        <Layout className={darkMode ? "app app-dark" : "app"}>
+          <Header className="app-header">
+            <img src="static/icons/logo.svg" alt="ZETA" />
+
+            <div className="app-toggle">
+              Dark Mode
+              <Switch
+                checked={darkMode}
+                onChange={(checked) => setDarkMode(checked)}
+              />
+            </div>
+          </Header>
+
+          <Content >
+            <ShoppingListPage />
+          </Content>
+        </Layout>
+      </ShoppingProvider>
+    </ConfigProvider>
   );
 }
-
-export default App;

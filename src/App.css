@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
+  background: #FFF;
+}
+
+.app-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #202020;
+  padding: 0px 24px;
 }
 
-.App-link {
-  color: #61dafb;
+.app-logo {
+  color: #fff !important;
+  margin: 0 !important;
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-toggle {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 14px;
 }
+
+.app-content {
+  padding: 24px;
+}
+
+
+.app-dark {
+  background: #0D0D0D;
+  --ant-color-bg-container: #0D0D0D;
+  --ant-color-bg-elevated: #0D0D0D;
+  --ant-modal-content-bg: #0D0D0D;
+}
+
+.app-dark :where(.ant-table-wrapper) .ant-table {
+  background: #0D0D0D !important;
+}
+
+.app-dark .ant-table-thead > tr > th {
+  background: #121212 !important;
+}
+

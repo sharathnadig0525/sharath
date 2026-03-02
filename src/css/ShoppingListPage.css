@@ -1,0 +1,214 @@
+.slp-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.slp-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slp-card {
+  margin-top: 12px;
+}
+
+.slp-full {
+  width: 100%;
+}
+
+.slp-addbtn-col {
+  display: flex;
+  align-items: flex-end;
+}
+
+.slp-addbtn {
+  width: 100%;
+  height: 40px;
+}
+
+.slp-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 0 14px;
+  flex-wrap: wrap;
+}
+
+.slp-count-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.slp-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.slp-filter-label {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.slp-filter {
+  width: 200px;
+}
+
+.slp-search {
+  width: 220px;
+}
+
+.formSecionHeader{
+  padding: 24px 40px 0px 40px ;
+  background-color: #F9FAFB;
+}
+
+.formSecionHeader-dark{
+  padding: 24px 40px 0px 40px;
+  background-color: #121212;
+}
+
+.filterSectionHeader {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;       
+  gap: 16px;
+}
+
+.totalItemsSection {
+  display: flex;
+  align-items: center;
+  min-width: 140px;
+}
+
+.itemsCount {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;             
+}
+
+.filtersection {
+  display: flex;
+  align-items: center;       
+  gap: 12px;                  
+  flex-wrap: nowrap;
+}
+
+.filterByLabel {
+  opacity: 0.8;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.toolbarControl .ant-select-selector,
+.toolbarControl.ant-input-affix-wrapper,
+.exportBtn {
+  height: 34px;
+  border-radius: 10px;
+}
+
+.toolbarControl .ant-select-selector {
+  display: flex;
+  align-items: center;
+}
+
+.toolbarControl.ant-input-affix-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.toolbarControl {
+  width: 200px;
+}
+
+.searchControl {
+  width: 240px;
+}
+
+.exportBtn {
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.searchControl.ant-input-affix-wrapper {
+  height: 34px;
+  padding: 4px 11px;
+}
+
+.searchControl .ant-input {
+  height: 24px;
+}
+
+.addItemGrid {
+  display: grid;
+  grid-template-columns: 1.6fr 1.1fr 1.1fr 0.9fr 1.1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+  width: 100%;
+}
+
+.addItemGrid * {
+  min-width: 0;
+}
+
+.addItemGrid .ant-input,
+.addItemGrid .ant-select-selector,
+.addItemGrid .ant-input-number,
+.addItemGrid .ant-picker,
+.addItemGrid .ant-btn {
+  height: 32px !important;
+}
+
+.addItemGrid .ant-select-selector {
+  display: flex;
+  align-items: center !important;
+}
+
+.addItemGrid .ant-input-number-input {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+
+.addItemGrid .ant-picker-input > input {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+
+.addItemGrid .ant-space-compact,
+.addItemGrid .ant-space-compact .ant-input,
+.addItemGrid .ant-space-compact .ant-select-selector {
+  height: 32px !important;
+}
+
+.addItemGrid .ant-space-compact > .ant-form-item,
+.addItemGrid .ant-space-compact > .ant-form-item-control,
+.addItemGrid .ant-space-compact > .ant-form-item-control-input,
+.addItemGrid .ant-space-compact > .ant-form-item-control-input-content {
+  height: 32px !important;
+}
+
+.addItemGrid .currency-select,
+.addItemGrid .ant-space-compact .ant-select {
+  width: 72px;
+}
+
+.addItemGrid .grid-btn {
+  display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.addItemGrid .grid-btn .ant-btn {
+  white-space: nowrap;
+  padding: 0 16px;
+  border-radius: 10px;
+}

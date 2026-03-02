@@ -1,46 +1,150 @@
-# Getting Started with Create React App
+🛒 Shopping List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern Shopping List Management Application built using React + Ant Design, featuring item management, filtering, sorting, reporting, and data visualization with amCharts.
 
-## Available Scripts
+Folder Structure
 
-In the project directory, you can run:
+src/
+│
+├── components/
+│   ├── ReportModal.tsx
+│   ├── SalesReportChart.tsx
+│   ├── SectionHeader.tsx
+│   └── ShoppingTable.tsx
+│
+├── context/
+│   └── ShoppingContext.tsx
+│
+├── hooks/
+│   └── useInfiniteScroll.ts
+│
+├── data/
+│   └── data.js
+│
+├── pages/
+│   └── ShoppingListPage.tsx
+│
+├── styles/
+│   └── (Component-specific CSS files)
+│
+├── App.tsx
+└── App.css
 
-### `npm start`
+Components Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. ReportModal.tsx
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Used for displaying the Sales Report Modal in the shopping list page.
+Shows overall spending insights and integrates the sales chart component.
 
-### `npm test`
+Features:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Total spending
+Highest cost item
+Average cost
+Dark / light theme support
 
-### `npm run build`
+2. SalesReportChart.tsx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Responsible for rendering the Sales Report Bar Chart using amCharts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Features:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Scrollable and zoomable bar chart
+Average cost displayed as a dotted horizontal line
+Custom tooltip showing:
+    Total cost
+    Price per unit
+    Quantity
 
-### `npm run eject`
+3. SectionHeader.tsx
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A reusable header component used across pages.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Props:
+Title
+CTA button text
+CTA click handler
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Use Case:
+Ideal for pages that require a title with a call-to-action button .
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4.ShoppingTable.tsx
 
-## Learn More
+Displays the list of shopping items using Ant Design Table.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Features:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Column sorting with custom sort icons
+Category & sub-category support
+Search functionality
+Dark mode optimized styling
+Export-friendly structure
+
+
+5. CSS Folder
+
+Contains all component-specific CSS files used for:
+Layout alignment
+Dark / light theme styling
+Table and modal overrides
+Pixel-perfect UI consistency
+Global theme-related styles are handled in App.css.
+
+6. Data & Utilities
+
+data/data.js
+Contains mock data for:
+Categories
+Sub-categories
+Shopping items
+Used for initial rendering and local testing.
+
+7. useInfiniteScroll.ts
+
+A custom React hook used to implement infinite scrolling.
+Behavior:
+
+Loads a fixed number of items as the user scrolls
+Automatically stops loading when no more data is available
+
+8. Pages
+ShoppingListPage.tsx
+
+The main page of the application.
+Responsibilities:
+
+Item creation form
+Category & sub-category filters
+Search functionality
+Sorting logic
+Table rendering
+Sales report modal integration
+
+9. State Management
+ShoppingContext.tsx
+Uses React Context API for state management.
+
+Manages:
+
+Shopping items list
+Categories and sub-categories
+Add item functionality
+Centralized and reusable state logic
+
+Key Features
+
+Add and manage shopping items
+Filter by category, sub-category, and search
+Visual sales analytics with amCharts
+Dark / Light theme support
+Infinite scrolling for large datasets
+Export shopping data (CSV / JSON)
+
+Tech Stack
+
+React (TypeScript)
+Ant Design v5
+amCharts 5
+Context API
+Day.js
