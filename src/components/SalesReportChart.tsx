@@ -153,7 +153,7 @@ export default function SalesReportChart({ items }: { items: Item[] }) {
       });
 
       range.get("label")?.setAll({
-        text: `Avg $${averageCost.toFixed(2)}`,
+        text: `$${averageCost.toFixed(2)}`,
         fill: am5.color(0x3b82f6),
         fontSize: 12,
         inside: true,
