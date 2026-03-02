@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, lazy, Suspense } from "react";
 import {
   Button,
   Form,
@@ -19,6 +19,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import ReportModal from "../components/ReportModal";
 import dayjs from "dayjs";
 import "./../css/ShoppingListPage.css";
+import { Spin } from "antd";
 
 type SortKey = "name" | "quantity" | "price" | "date" | "total" | "categoryId" | "subCategoryId";
 
@@ -32,7 +33,7 @@ export default function ShoppingListPage() {
     { label: "₹", value: "INR", disabled: true },
     { label: "£", value: "GBP", disabled: true },
   ];
-
+  const ReportModal = lazy(() => import("../components/ReportModal"));
   const isDark = token.colorBgBase === "#000" ? true : false;
 
   const [filters, setFilters] = useState({
@@ -385,11 +386,17 @@ export default function ShoppingListPage() {
         onSort={toggleSort}
         sortState={sort}
       />
-      <ReportModal
-        open={showReport}
-        onClose={() => setShowReport(false)}
-        items={filtered}
-      />
+      {showReport && (
+        <Suspense fallback={<div style={{ textAlign: "center", padding: 40 }}>
+      <Spin size="large" />
+    </div>}>
+          <ReportModal
+            open={showReport}
+            onClose={() => setShowReport(false)}
+            items={filtered}
+          />
+        </Suspense>
+      )}
     </>
   );
 }
