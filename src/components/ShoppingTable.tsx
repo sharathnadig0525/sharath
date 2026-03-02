@@ -1,12 +1,12 @@
-import React, { ReactNode, useEffect, useRef } from "react";
-import {  Table, Tag } from "antd";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
+import { Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { theme } from "antd";
 import { SortOrder } from "antd/es/table/interface";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 import { useShopping } from "../context/ShoppingContext";
 import { ShoppingItem } from "../types";
-import {  ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
 
 type SortKey = "name" | "quantity" | "price" | "date" | "total" | "categoryId" | "subCategoryId";
 
@@ -24,7 +24,7 @@ export default function ShoppingTable({
 }: Props) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const { categories, subCategories } = useShopping();
-  const { visible, handleScroll } = useInfiniteScroll(data, 10);
+  const { visible, handleScroll } = useInfiniteScroll(data, 15);
   const { useToken } = theme;
   const { token } = useToken();
   const isDark = token.colorBgBase === "#000" ? true : false;
@@ -182,6 +182,18 @@ export default function ShoppingTable({
     },
   ];
 
+  const [tableHeight, setTableHeight] = useState(400);
+  useEffect(() => {
+    function updateHeight() {
+      setTableHeight(window.innerHeight - 350);
+    }
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   return (
     <div ref={wrapperRef}>
       <Table
@@ -189,7 +201,7 @@ export default function ShoppingTable({
         columns={columns}
         dataSource={visible}
         pagination={false}
-        scroll={{ y: 500 }}
+        scroll={{ y: tableHeight }}
       />
     </div>
   );

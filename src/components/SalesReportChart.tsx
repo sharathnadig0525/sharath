@@ -125,7 +125,7 @@ export default function SalesReportChart({ items }: { items: Item[] }) {
     );
 
     series.columns.template.setAll({
-      width: 32.392, // ✅ exact pixel width
+      width: 32.392,
       cornerRadiusTL: 10,
       cornerRadiusTR: 10,
       fill: am5.color(0x93c5fd),
@@ -169,9 +169,14 @@ export default function SalesReportChart({ items }: { items: Item[] }) {
       });
     }
 
-    chart.set("scrollbarX", undefined);
+    const scrollbarX = am5.Scrollbar.new(root, {
+      orientation: "horizontal",
+      height: 10,
+      marginTop: 10,
+    });
+    chart.set("scrollbarX", scrollbarX);
 
-    const FIXED_VISIBLE = 13;
+    const FIXED_VISIBLE = 20;
 
     const clamp = () => {
       const start = xAxis.getPrivate("startIndex");

@@ -217,7 +217,7 @@ export const mockItems = [
     name: "Mutton Boneless",
     categoryId: "meat",
     subCategoryId: "mutton",
-    quantity: 3,
+    quantity: 1,
     price: 520,
     date: new Date().toISOString(),
     createdAt: Date.now() - 5100000,
