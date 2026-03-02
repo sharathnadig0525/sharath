@@ -16,7 +16,6 @@ import ShoppingTable from "../components/ShoppingTable";
 import { useShopping } from "../context/ShoppingContext";
 import { PlusOutlined } from "@ant-design/icons";
 import { SearchOutlined } from "@ant-design/icons";
-import ReportModal from "../components/ReportModal";
 import dayjs from "dayjs";
 import "./../css/ShoppingListPage.css";
 import { Spin } from "antd";
